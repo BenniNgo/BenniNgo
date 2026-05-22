@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benni Thien Ngo – Curriculum Vitae</title>
+  <style>
+    /* ---------- GLOBAL ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c2c2c;
+      background: #f9f9f9;
+      line-height: 1.6;
+    }
+    a {
+      color: #7b001c; /* burgundy accent */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- HEADER / NAV ---------- */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-name {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      font-weight: 500;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    nav ul li a:hover {
+      color: #7b001c;
+    }
+
+    /* ---------- MAIN CONTENT ---------- */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* ---------- NAME / TITLE / PHOTO ---------- */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .name-section h1 {
+      font-size: 2.5rem;
+      color: #222;
+      margin-bottom: 0.2rem;
+    }
+    .name-section .title {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .photo-placeholder {
+      width: 140px;
+      height: 140px;
+      background: #e0e0e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 0.9rem;
+      overflow: hidden;
+      border: 3px solid #7b001c;
+    }
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* ---------- CONTACT INFO ---------- */
+    .contact-info {
+      background: #fff;
+      padding: 1.2rem 1.5rem;
+      border-left: 4px solid #7b001c;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .contact-info p {
+      margin: 0;
+    }
+    .contact-info strong {
+      color: #555;
+      margin-right: 0.3rem;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      font-size: 1.7rem;
+      color: #7b001c;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .entry {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-left: 3px solid #ccc;
+    }
+    .entry-header {
+      font-weight: 600;
+      color: #222;
+    }
+    .entry-details {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .entry-description {
+      margin-top: 0.3rem;
+      color: #444;
+    }
+    .thesis-desc {
+      font-style: italic;
+      color: #444;
+    }
+
+    /* lists for conferences */
+    ul.conflist {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul.conflist li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul.conflist li::before {
+      content: "•";
+      color: #7b001c;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* ---------- LANGUAGES ---------- */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .lang-item {
+      background: #fff;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .lang-item strong {
+      color: #7b001c;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: #888;
+      background: #fff;
+      border-top: 1px solid #eee;
+      margin-top: 2rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 640px) {
+      .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .lang-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="nav-name">Benni Thien Ngo</span>
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#theses">Theses</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#languages">Languages</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Name, title, photo -->
+    <div class="cv-header">
+      <div class="name-section">
+        <h1>Benni Thien Ngo</h1>
+        <div class="title">Doctoral Candidate in Mathematics</div>
+      </div>
+      <div class="photo-placeholder">
+        <!-- Replace with your photo: <img src="your-photo.jpg" alt="Benni Thien Ngo"> -->
+        📷 Your Photo
+      </div>
+    </div>
+
+    <!-- Contact info – replace with your work email and office -->
+    <div class="contact-info">
+      <p><strong>Address:</strong> 61 Heathcote Avenue, London, Ontario N6G 1V3, Canada</p>
+      <p><strong>Office:</strong> Room XXX, [Building Name]</p>
+      <p><strong>Work Email:</strong> <a href="mailto:your.email@uwo.ca">your.email@uwo.ca</a></p>
+    </div>
+
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">Doctor of Philosophy in Mathematics (since 2025)</div>
+        <div class="entry-details">University of Western Ontario, London, Ontario, Canada</div>
+        <div class="entry-description">Expected date of graduation: December 31, 2028.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">Master of Science in Mathematics (2021 – 2024)</div>
+        <div class="entry-details">Universität Regensburg, Germany</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">Bachelor of Science in Mathematics (2018 – 2022)</div>
+        <div class="entry-details">Universität Regensburg, Germany</div>
+      </div>
+    </section>
+
+    <!-- Theses -->
+    <section id="theses">
+      <h2>Theses</h2>
+      <div class="entry">
+        <div class="entry-header">Master's thesis</div>
+        <div class="entry-details"><strong>Title:</strong> A functorial rectification of finitely cocomplete ∞-categories</div>
+        <div class="entry-details"><strong>Supervisor:</strong> Denis-Charles Cisinski</div>
+        <div class="entry-description thesis-desc">A result, originally by Karol Szumiło, states that the homotopy theories of finitely cocomplete ∞-categories and of cofibration categories are equivalent. Using the theory of higher categories, I gave an alternative proof of this result.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">Bachelor's thesis</div>
+        <div class="entry-details"><strong>Title:</strong> Locally constant sheaves with values in higher groupoids</div>
+        <div class="entry-details"><strong>Supervisor:</strong> Denis-Charles Cisinski</div>
+        <div class="entry-description thesis-desc">Following §7.1 of Jacob Lurie's "Higher Topos Theory", I prove that the sheaf ∞-category of a paracompact space X is the localization of an appropriate simplicial category of spaces over X.</div>
+      </div>
+    </section>
+
+    <!-- Activities & Experience -->
+    <section id="experience">
+      <h2>Activities &amp; Experience</h2>
+      <div class="entry">
+        <div class="entry-header">Mentor in the Directed Reading Program (DRP)</div>
+        <div class="entry-details">University of Western Ontario (January – April 2025, September – December 2025)</div>
+        <div class="entry-description">Supervised Ishaan Chopra on "An Introduction to Category Theory: the Yoneda Lemma" and Kai Boisvert on "Introduction to Whitehead's theorem" and "The Point of Pointless Topology".</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">Technical Support</div>
+        <div class="entry-details">Universität Regensburg (April 2020 – October 2024)</div>
+        <div class="entry-description">First point of contact for technical issues of any kind.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">Tutor</div>
+        <div class="entry-details">Universität Regensburg (April 2019 – October 2024)</div>
+        <div class="entry-description">Corrected students' submissions to weekly exercise sheets for various mathematics courses.</div>
+      </div>
+    </section>
+
+    <!-- Talks -->
+    <section id="talks">
+      <h2>Talks</h2>
+      <div class="entry">
+        <div class="entry-header">Combinatorial Model Categories &amp; Presentable ∞-Categories</div>
+        <div class="entry-details">Graduate Student Seminar, University of Western Ontario – March 20, 2026</div>
+      </div>
+      <div class="entry">
+        <div class="entry-header">A functorial rectification of finitely cocomplete quasicategories</div>
+        <div class="entry-details">2025 CMS Summer Meeting, Université Laval – June 8, 2025</div>
+      </div>
+    </section>
+
+    <!-- Conferences -->
+    <section id="conferences">
+      <h2>Conferences, Seminars &amp; Workshops</h2>
+
+      <h3>Onsite Participation</h3>
+      <ul class="conflist">
+        <li><strong>32<sup>nd</sup> Foundational Methods in Computer Science Workshop</strong> – University of Ottawa, Canada (June 17–20, 2025) – Annual workshop bringing together researchers in theoretical computer science and mathematics.</li>
+        <li><strong>2025 CMS Summer Meeting</strong> – Université Laval, Québec City, Canada (June 6–9, 2025) – Biannual event with prize lectures, plenary speakers, scientific sessions, and mini-courses.</li>
+        <li><strong>Algebraic Topology and Related Fields</strong> – HUS, Vietnam National University, Hanoi, Vietnam (July 29 – August 2, 2024) – Overview of developments in algebraic topology and related fields in Vietnam over 40 years.</li>
+        <li><strong>Interactions between Algebra, Equivariance, and Homotopy Theory</strong> – Universität Regensburg (June 24–28, 2024) – Summer school for early career researchers in algebra and homotopy theory.</li>
+        <li><strong>Interactions of Proof Assistants and Mathematics</strong> – Universität Regensburg, Germany (September 18–29, 2023) – Summer school on proof assistants: foundations, engineering, and applications.</li>
+        <li><strong>Parametrized Homotopy Theory</strong> – Københavns Universitet, Denmark (September 4–8, 2023) – Workshop on new techniques in parametrized homotopy theory.</li>
+        <li><strong>Young Topologists Meeting</strong> – EPFL, Switzerland (July 24–28, 2023) – Annual conference for junior researchers in topology.</li>
+      </ul>
+
+      <h3>Remote Participation</h3>
+      <ul class="conflist">
+        <li><strong>2025 Category Theory Octoberfest</strong> (October 25–26, 2025) – Informal virtual meeting covering all areas of category theory.</li>
+        <li><strong>Workshop on Homotopy Type Theory / Univalent Foundations 2025</strong> – Università di Genova, Italy (April 15–16, 2025) – Workshop on syntax, semantics, and formalization in HoTT/UF.</li>
+        <li><strong>The Bavarian Geometry &amp; Topology Meeting XII</strong> – Universität Regensburg, Germany (April 8–9, 2024)</li>
+        <li><strong>Online Workshop on (∞,2)-Categories</strong> (October 11 – November 15, 2023) – Organized by Lyne Moser, Martina Rovelli, and Nima Rasekh.</li>
+        <li><strong>Young Homotopy-Theorist Online Meeting</strong> (October 5, 2023 – May 30, 2024) – Online seminar for early-career researchers in homotopy theory.</li>
+      </ul>
+
+      <h3>Invited, but Unable to Attend</h3>
+      <ul class="conflist">
+        <li><strong>2026 CMS Summer Meeting</strong> – Saint John, New Brunswick (June 5–8, 2026)</li>
+      </ul>
+    </section>
+
+    <!-- Languages -->
+    <section id="languages">
+      <h2>Languages</h2>
+      <div class="lang-grid">
+        <div class="lang-item"><strong>Human:</strong> English (fluent), German (native), Vietnamese (conversational)</div>
+        <div class="lang-item"><strong>Programming:</strong> C, Java, Python (basic), R (basic)</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Benni Thien Ngo – Last updated on <span id="last-updated">[current date]</span>. Built with GitHub Pages.</p>
+  </footer>
+</body>
+</html>
